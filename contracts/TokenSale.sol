@@ -1,8 +1,8 @@
 pragma solidity ^0.5.0;
-import "./myToken.sol";
+import "./CustomToken.sol";
 contract TokenSale {
 
-    myToken public tokenContract;
+    CustomToken public tokenContract;
     uint256 public tokenPrice;
     uint256 public tokensSold;
 
@@ -11,7 +11,7 @@ contract TokenSale {
       uint256 _amount
     );
 
-    constructor (myToken _tokenContract, uint256 _tokenPrice) public {
+    constructor (CustomToken _tokenContract, uint256 _tokenPrice) public {
         tokenContract = _tokenContract;
         tokenPrice = _tokenPrice;
     }

@@ -1,16 +1,9 @@
-var myToken = artifacts.require("./myToken.sol");
-var tokenSale = artifacts.require("./TokenSale.sol");
+var CustomToken = artifacts.require("./CustomToken.sol");
 var Dice = artifacts.require("./Dice.sol");
 
-module.exports = function(deployer) {
 
-  deployer.deploy(myToken,250000).then(function() {
-      var tokenPrice = 1000000000000000;
-      return deployer.deploy(tokenSale, myToken.address, tokenPrice);
+module.exports = (deployer, network) => {
+    deployer.deploy(CustomToken,1000).then(function() {
+        return deployer.deploy(Dice, CustomToken.address)
     });
-
-  deployer.deploy(Dice,'0x628abc48de3df2afd1164cb8ae3f72584ae8dcd5').then(function(){
-      return deployer.deploy(Dice,tokenSale.address);
-    });
-
 };
