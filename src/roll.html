@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,73 +11,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Roll the dice</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-  </head>
+</head>
 
 <style>
 
-.innerDiv1,.innerDiv2,.innerDiv3{
-  height: 300px;
-padding: 10px;
-width: 100%;
-margin-bottom: 15px;
-}
+    .innerDiv1, .innerDiv2, .innerDiv3 {
+        height: 300px;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
 
 </style>
-   <body>
-  <h1 align="center">Roll Dice</h1>
-  <div class="row" style="padding:40px">
-<div class="col-md-4">
-  <div class="innerDiv1" align="center"  style="background:red">
-    <p class="text-capitalize" style="font-size: x-large;">Details</p>
-    <button align="center" id="token" type="submit" class="btn btn-primary disable_cls" >
-      Get Token
-    </button>
-    <h4><p><div id="name"></div></p></h4>
-    <p><div id="accountAddress"></div><br></p>
-    <div>
-    <span>Tokens Available:  </span><span id="tokens" class="text-uppercase" style="color: orange">
+<body>
+<h1 align="center">Roll Dice</h1>
+<div class="row" style="padding:40px">
+    <div class="col-md-4">
+        <div class="innerDiv1" align="center" style="background:red">
+            <p class="text-capitalize" style="font-size: x-large;">Details</p>
+            <h4><p>
+                <div>
+                <span>Player Name:</span><span id="name" class="text-uppercase" style="color: orange"></span>
+                 </div>
+                </p></h4>
+            <p>
+            <div id="accountAddress"></div>
+            <br></p>
+            <div>
+                <span>Tokens Available:  </span><span id="tokens" class="text-uppercase" style="color: orange"></span>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<div class="col-md-4" >
-  <div id="fo" class="innerDiv2" align="center" style="background:pink">
-    <p class="text-capitalize" style="font-size: x-large;">Play Game</p>
-    <div id='betse'> <p class="text-capitalize" style="font-size: x-large;"></p>
-      <div class="row"><div class="col-md-12">
-        <input type="number" style="width:100%;" min="1" max="6" id="betvalue" class="disable_cls" placeholder="Write a random number">
-      </div></div>
-         <p id="betset" class="text-capitalize font-weight-bold" style="font-size: large; color: blueviolet"></p>
-         <p id="newBet" class="text-capitalize font-weight-bold" style="font-size: large; color: blueviolet"> </p>
-         <p class="text-capitalize font-weight-bold" style="font-size: x-large;">Roll the dice </p>
-         <button  type="submit" class="btn btn-primary disable_cls" onclick="roll();" >
-           Roll it
-         </button>
-   </div>
-  </div>
-</div>
-<div class="col-md-4" >
-  <div align="center" class="innerDiv3" style="background:orange;">
-    <p class="text-capitalize" style="font-size: x-large;">Result</p>
-    <div class="showResult">
-      <p id="dice" class="text-capitalize font-weight-bold" style="font-size: x-large;"></p>
-      <p id="result" class="text-capitalize font-weight-bold" style="font-size: x-large;"></p>
-      <button id="play" type="reset" class="btn btn-primary" onclick="again();">
-           Play Again
-      </button>
-      <button type="submit" class="btn btn-primary" onclick="exit();">
-        Exit
-      </button>
-  </div>
-  </div>
-</div>
+    <div class="col-md-4">
+        <div id="fo" class="innerDiv2" align="center" style="background:pink">
+            <p class="text-capitalize" style="font-size: x-large;">Play Game</p>
+            <div id='betse'><p class="text-capitalize" style="font-size: x-large;"></p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="number" style="width:100%;" min="1" max="6" id="betvalue" class="disable_cls"
+                               placeholder="Write a random number">
+                    </div>
+                </div>
+                <p id="betset" class="text-capitalize font-weight-bold" style="font-size: large; color: blueviolet"></p>
+                <p id="newBet" class="text-capitalize font-weight-bold" style="font-size: large; color: blueviolet"></p>
+                <p class="text-capitalize font-weight-bold" style="font-size: x-large;">Roll the dice </p>
+                <button type="submit" class="btn btn-primary disable_cls" onclick="roll();">
+                    Roll it
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div align="center" class="innerDiv3" style="background:orange;">
+            <p class="text-capitalize" style="font-size: x-large;">Result</p>
+            <div class="showResult">
+                <p id="dice" class="text-capitalize font-weight-bold" style="font-size: x-large;"></p>
+                <p id="result" class="text-capitalize font-weight-bold" style="font-size: x-large;"></p>
+                <button id="play" type="reset" class="btn btn-primary" onclick="again();">
+                    Play Again
+                </button>
+                <button type="submit" class="btn btn-primary" onclick="exit();">
+                    Exit
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.min.js"></script>
+<script src="js/app.js"></script>
 
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-       <script src="js/bootstrap.min.js"></script>
-       <script src="js/web3.min.js"></script>
-       <script src="js/truffle-contract.min.js"></script>
-       <script src="js/app.js"></script>
 </body>
-  </html>
+</html>

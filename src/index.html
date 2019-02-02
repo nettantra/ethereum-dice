@@ -1,49 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
+    <title>Dice Roll</title>
     <meta charset="UTF-8">
+    <meta name="description" content="Dice Roll">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Please Provide Your Details For Playing</title>
 
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css1/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css1/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css1/owl.carousel.css"/>
+    <link rel="stylesheet" href="css1/style.css"/>
+    <link rel="stylesheet" href="css1/animate.css"/>
 
-    <!-- Main css -->
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
 
-    <div class="main">
+<!-- Header section -->
+<header class="header-section">
 
-        <div class="container">
-            <div class="signup-content">
-
-                    <h2>Dice-Roll </h2>
-                    <p class="desc">to test your luck signup here</p>
-                    <!-- <form id="frm"> -->
-                    <div class="form-group">
-                        <input type="text" class="form-input" name="name" id="name" placeholder="Name"/>
-                    </div>
-                    <div class="form-group">
-                        <button class="submit-link submit" id="submit" type="submit">SubMit!</button>
-                        <input type="button" value="Login" class="submit-link submit" name="login" onclick="validatelogin()" />
-                    <!-- </form> -->
-
-
-            </div>
+    <div class="container">
+        <!-- logo -->
+        <div class="site-logo">
+            <p id="add">Welcome To Dice Roll</p>
         </div>
 
-    </div>
+        <div class="user-panel">
+            <!--<a href="login.html">Login</a>-->
 
-    <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.min.js"></script>
-    <script src="js/app.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+            <input type="button" value="Login" class="submit-link submit" name="login" onclick="validatelogin()"/>
+        </div>
+        <div id = "login" class="user-panel">
+            <input type="text"  class="form-input" name="name" id="add" placeholder="Please Provide Your Login Details"/></li>
+        </div>
+            <!-- site menu -->
+
+    </div>
+           <!-- site menu -->
+    </div>
+</header>
+<!-- Header section end -->
+
+
+<!-- Hero section -->
+<section class="hero-section">
+    <div class="hero-slider owl-carousel">
+        <div class="hs-item set-bg" data-setbg="img1/How-the-dice-roll-512f91ba3532c_hires.jpg">
+            <div class="hs-text">
+                <div class="container">
+                    <h2>The Blockchain <span>Dice Game</span> Is Here</h2>
+                    <p>One who doesn't throw the dice can never expect to score a six.
+                        <br>The dice of Zeus always fall luckily.<br> Are You Zeus!
+                    </p>
+                    <!-- <a href="#" class="site-btn">Read More</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero section end -->
+
+
+<!-- Latest news section -->
+<div class="latest-news-section">
+    <div class="ln-title">Latest News</div>
+    <div class="news-ticker">
+        <div class="news-ticker-contant">
+            <div class="nt-item"><span class="new">new</span>Sign-In Now To Enjoy Your First Free 100 Tokens.
+            </div>
+            <!--<div class="nt-item"><span class="strategy">strategy</span>Isum dolor sit amet, consectetur adipiscing elit.-->
+            <!--</div>-->
+            <!--<div class="nt-item"><span class="racing">racing</span>Isum dolor sit amet, consectetur adipiscing elit.-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<!-- Latest news section end -->
+
+
+<!--====== Javascripts & Jquery ======-->
+<script src="js1/jquery-3.2.1.min.js"></script>
+<script src="js1/bootstrap.min.js"></script>
+<script src="js1/owl.carousel.min.js"></script>
+<script src="js1/jquery.marquee.min.js"></script>
+<script src="js1/main.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.min.js"></script>
+<script src="js/app.js"></script>
+</body>
 </html>

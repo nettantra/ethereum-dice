@@ -1,4 +1,5 @@
 pragma solidity ^0.5.0;
+import "./Dice.sol";
 
 contract CustomToken {
     string public name = "RAZORx";
@@ -25,7 +26,7 @@ contract CustomToken {
     uint256 public tokenPrice;
     uint256 public tokensSold;
 
-    mapping(address => uint) public balanceof;
+    mapping(address => uint) public balanceof;      //balanceof need to be called to dice contract .
     mapping(address => mapping(address => uint)) public allowance;
 
     constructor (uint _initialAmount) public {
@@ -34,7 +35,6 @@ contract CustomToken {
     }
 
     function transfer(address _to, uint _value) public returns (bool check){
-        require(balanceof[msg.sender] >= _value);
         balanceof[msg.sender] -= _value;
         balanceof[_to] += _value;
         emit Transfer(msg.sender, _to, _value);
@@ -55,20 +55,18 @@ contract CustomToken {
         allowance[_from][msg.sender] -= _value;
         emit Transfer(_from, _to, _value);
         return true;
-
     }
 
-    function buyTokens(uint256 _numberOfTokens) public payable {
-        require(msg.value == _numberOfTokens * tokenPrice);
+    function buyTokens(uint256 _numberOfTokens) public payable {            //tokens need to be fetched to the dice contract after getting from the admin.
         require(transfer(msg.sender, _numberOfTokens));
         tokensSold += _numberOfTokens;
         emit Sell(msg.sender, _numberOfTokens);
+        totaltoken-=tokensSold;
+
     }
 
     /* all the getter function from this Contract*/
     function getterToken() public view returns (uint) {
         return totaltoken;
     }
-
-
 }
